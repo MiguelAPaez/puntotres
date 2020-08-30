@@ -1,9 +1,9 @@
-# puntotres
+# Puntotres
 Punto Tres Backend
 
 Para realizar la ejecución del presente código es necesario crear una tabla en MySql llamada employee
 
-# crear tabla employee
+# Crear tabla employee
 CREATE TABLE IF NOT EXISTS employee(
 	id_employee INT auto_increment,
     fullname VARCHAR(60) NOT NULL,
