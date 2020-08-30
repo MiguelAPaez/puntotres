@@ -24,7 +24,7 @@ app.get('/', (req, res)=>{
 });
 
 // all employees
-app.get('/employees',(req,res) =>{
+app.get('/api/employees',(req,res) =>{
     const sql = 'SELECT * FROM employee';
 
     connection.query(sql, (error, results) =>{
@@ -37,7 +37,7 @@ app.get('/employees',(req,res) =>{
     });
 });
 
-app.get('/employees/:id',(req,res) =>{
+app.get('/api/employees/:id',(req,res) =>{
     const {id } = req.params
     const sql = `SELECT * FROM employee WHERE id_employee = ${id}`;
 
@@ -52,7 +52,7 @@ app.get('/employees/:id',(req,res) =>{
 
 });
 
-app.post('/add', (req, res) =>{
+app.post('/api/add', (req, res) =>{
     
     const sql = 'INSERT INTO employee SET ?';
 
@@ -69,7 +69,7 @@ app.post('/add', (req, res) =>{
 });
 
 /*
-app.put('/update/:id', (req, res) =>{
+app.put('/api/update/:id', (req, res) =>{
     
     const {id } = req.params;
     const {fullname, functio} = req.body;
@@ -81,7 +81,7 @@ app.put('/update/:id', (req, res) =>{
 
 });*/
 
-app.delete('/delete/:id', (req, res)=>{
+app.delete('/api/delete/:id', (req, res)=>{
     const {id} = req.params;
     const sql = `DELETE FROM employee WHERE id_employee = ${id}`;
     connection.query(sql, error =>{
